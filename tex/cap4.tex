@@ -2,4 +2,38 @@
 % Chapter 4: Conclusiones y Trabajos Futuros 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-bla, bla, bla, etc.
+
+According to Toulouse et al. [20], three types of parallelization strategies seem to
+be appropriate for the methods most often used in combinatorial optimization: (1)
+parallelization of operations within an iteration of the solution method, (2) decomposition
+of problem domain or search space, and (3) multi-search threads with various
+degrees of synchronization and cooperation. Which of these types is suited for
+the parallelization of an optimization method depends mainly on the goal pursued
+by the parallelization. Since the enhancement of the solution quality is in the foreground
+here, an approach of type 3 is chosen for the parallelization.
+An instance of a container loading problem is treated by several processes. Each
+process is an instance of the sequential TSA and solves the complete problem. However,
+the individual instances are configurated differently. Furthermore, the processes
+cooperate through the exchange of calculated solutions. A transmitted solution is
+possibly used by the receiving process as a starting point for further search. While
+the varying configuration of the processes causes a diversification of the search,
+the exchange of solutions serves the intensification of the search within the regions
+of best solutions.
+Each of the autonomous processes is assigned to a workstation of a local network
+(LAN). Hence, more precisely expressed, the parallel TSA is a distributed-parallel
+method. It is described more closely in the following.
+According to the diversification concept of the sequential TSA, the search in each
+process is structured into several phases. In order to determine favourable parameter
+settings with respect to the definition of the phases of all processes, a series of experiments
+was carried out by means of the sequential TSA (cf. Section 5). The best parameter
+settings are distributed approximately evenly over the processes and per
+process the most promising parameter settings are, as far as possible, applied in early
+phases. In this way the intended intensified exploration of regions that contain solutions
+of high quality, is supported to a greater extent.
+As to the communication frequency or the number of communications, the type
+of the underlying sequential method (here a TSA) is to be considered. The consequence
+of a very high communication frequency is that the individual processes
+are prevented from intensively exploring limited regions of the search space. Therefore,
+a lower communication frequency is to be chosen in advance. Here, an exchange
+of best solutions is only carried out at the transition from one phase to the
+next phase of each of the processes.

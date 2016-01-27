@@ -2,50 +2,67 @@
 % Chapter 3: Procedimiento experimental 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Este capítulo ha de contar con seccciones para la descripción de los experimentos 
-y del material.
-%
-También debe haber una sección para los resultados obtenidos y una última de 
-análisis de los resultados.
+
+For the evaluation of the local arrangements generated for a packing space, two
+modes are available which are applied alternatively. The selection of the relevant
+mode is also controlled by a parameter, named arrEvalMode.
+The first mode, encoded by the parameter value 0, applies a single evaluation criterion:
+the total volume of the boxes stowed in the packing space which should be as
+large as possible.
+The second mode, encoded by the parameter value 1, additionally applies two further
+evaluation criteria. These are the already introduced quantities loss volume and
+maximum effective volume. Both criteria refer to the residual packing spaces of a local
+arrangement. Analogous to the evaluation of subdivisions, the loss volume
+should be as small as possible and the maximum effective volume as large as possible.
+Since the three evaluation criteria applied are weighted equally, the evaluation procedure
+is organized as a series of comparisons of the local arrangements for a packing
+space in pairs.
+Finally, two additional parameters of the basic heuristic are introduced and
+briefly discussed. The parameter maxArr defines the maximum length of the arrangement
+list ArrList for a packing space. A local arrangement is only considered in tabu search process if it occurs in ArrList, i.e. belongs to the maxArr best arrangements.
+The parameter aboveArr determines whether 2-arrangements of type ‘‘above’’
+are generated (parameter value 1) or not (parameter value 0). Like the different
+modes for subdivisions and arrangements, the parameter aboveArr serves the diversi-
+fication of the tabu searc
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\section{Descripción de los experimentos}
-\label{3:sec:1}
+%\section{Descripción de los experimentos}
+%\label{3:sec:1}
 
-bla, bla, etc. 
-
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\section{Descripción del material}
-\label{3:sec:2}
-
-bla, bla, etc. 
-
+%bla, bla, etc. 
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\section{Resultados obtenidos}
-\label{3:sec:3}
+%\section{Descripción del material}
+%\label{3:sec:2}
 
-bla, bla, etc. 
+%bla, bla, etc. 
+
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%\section{Resultados obtenidos}
+%\label{3:sec:3}
+
+%bla, bla, etc. 
 
 
 %------------------------------------------------------------------------------
-\begin{figure}[!th]
-\begin{center}
-\includegraphics[width=0.75\textwidth]{images/figura1.eps}
-\caption{Ejemplo de figura}
-\label{fig:1}
-\end{center}
-\end{figure}
+%\begin{figure}[!th]
+%\begin{center}
+%\includegraphics[width=0.75\textwidth]{images/figura1.eps}
+%\caption{Ejemplo de figura}
+%\label{fig:1}
+%\end{center}
+%\end{figure}
 %------------------------------------------------------------------------------
 
 
 %------------------------------------------------------------------------------
-\input{tables/table.tex}
+%\input{tables/table.tex}
 %------------------------------------------------------------------------------
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\section{Análisis de los resultados}
-\label{3:sec:4}
+%\section{Análisis de los resultados}
+%\label{3:sec:4}
 
-bla, bla, etc. 
+%bla, bla, etc. 
 

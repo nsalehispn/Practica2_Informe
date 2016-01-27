@@ -4,7 +4,7 @@
 \usepackage[dvips]{graphicx}
 \usepackage[dvips]{epsfig}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[english]{babel}
 \usepackage{alltt}
 \usepackage{templates/algorithm}
 \usepackage{templates/algorithmic}
@@ -105,10 +105,12 @@
 
 \HRule
 \begin{center}
-        {\Huge Proyecto } \\[2.5mm] 
-        {\Huge Título del Artículo} \\[5mm]
+        {\Huge Proyecto de la asignatura Computacion Avanzada } \\[2.5mm] 
+        {\Huge Título del Artículo :  A parallel tabu search algorithm for solving
+the container loading problem
+} \\[5mm]
 
-        {\Large Autor } \\[10mm]
+        {\Large Autor : ROBABEH SALEHI} \\[10mm]
 
         {\em Computación Avanzada} \\[5mm]
         Lenguajes y Sistemas Informáticos \\[5mm]
@@ -126,51 +128,95 @@
 \begin{abstract}
 {\em
 
-El objetivo de este trabajo ha sido ....
+%El objetivo de este trabajo ha sido ....
 %
-bla, bla, bla
+%bla, bla, bla
 %
-bla, bla, bla
+%bla, bla, bla
 %
-bla, bla, bla
+%bla, bla, bla
+Abstract
+This paper presents a parallel tabu search algorithm for the container loading problem with
+a single container to be loaded. The emphasis is on the case of a weakly heterogeneous load.
+The distributed-parallel approach is based on the concept of multi-search threads according to
+Toulouse et al. [Issues in designing parallel and distributed search algorithms for discrete optimization
+problems, Publication CRT-96-36, Centre de recherche sur les transports, Universitede
+Montreal, Canada, 1996] i.e., several search paths are investigated concurrently. The
+parallel searches are carried out by differently configured instances of a tabu search algorithm,
+which cooperate by the exchange of (best) solutions at the end of defined search phases. The
+parallel search processes are executed on a corresponding number of LAN workstations. The
+efficiency of the parallel tabu search algorithm is demonstrated by an extensive comparative
+test including well-known reference problems and loading procedures from other authors.
+ 2003 Elsevier Science B.V. All rights reserved.
+
+
+
+In the interest of stability of the load, both horizontal dimensions of each box are
+to be supported according to a predefined percentage. In any case the centre of gravity
+of each box must be supported in order to avoid boxes tipping over. It is assumed
+that the centre of gravity and the geometric centre of each box coincide.
+Box types are defined as follows. Two boxes are the same type if they coincide in
+all three side dimensions. On the basis of this concept of box types, the following
+three categories of box sets can be distinguished. A homogeneous box set is given
+if all boxes are of the same type. A box set is called weakly heterogeneous if there
+exist a few box types and many items per type. Finally, a strongly heterogeneous
+box set is characterized by a greater number of box types and only few items per
+type. Here, a weakly heterogeneous set of boxes is assumed.
+In the recent years, many (sequential) solution methods for the container loading
+problem have been developed. It is well known that the container loading problem is
+NP-hard (cf. [18]). Hence, the methods developed are heuristic approaches.
+
+The only block of a 1-arrangement is always placed in the reference corner of the
+packing space. From the two blocks of a 2-arrangement, one is arranged in the
+reference corner. The second block can alternatively be placed as a neighbour in
+x-direction (arrangement type ‘‘in front of’’), as a neighbour in y-direction (arrangement
+type ‘‘beside’’) or as a neighbour in z-direction (arrangement type ‘‘above’’). In
+the case of a placement according to arrangement type ‘‘in front of’’, the block with
+the larger y-dimension is positioned in the reference corner, while for the arrangement
+type ‘‘beside’’ the block with the larger x-dimension is positioned in the reference
+corner. The arrangement type ‘‘above’’ is only used if both horizontal
+dimensions of a block are not smaller than the corresponding dimensions of the
+other block. The block with the larger horizontal dimensions is positioned in the reference
+corner and the other above. Fig. 2 illustrates a 1-arrangement and two 2-
+arrangements of the arrangement types ‘‘in front of’’ and ‘‘beside’’.
 
 }
 
 \begin{palabrasClave}
-Palabra reservada1, Palabra reservada2, ...
+Tabu searchin: is one of the searching method.
 \end{palabrasClave}
 
 \end{abstract}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage{\pagestyle{empty}\cleardoublepage}
+%\newpage{\pagestyle{empty}\cleardoublepage}
 
 \pagestyle{myheadings} %my head defined by markboth or markright
 % No funciona bien \markboth sin "twoside" en \documentclass, pero al
 % ponerlo se dan un mont�n de errores de underfull \vbox, con lo que no se
 % ha puesto.
-\markboth{Nombre del alumno}{Título del trabajo}
+\markboth{ROBABEH SALEHI}{A parallel tabu search algorithm for solving
+the container loading problem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Numeracion en romanos
 \renewcommand{\thepage}{\roman{page}}
 \setcounter{page}{1}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\tableofcontents
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\listoffigures
+%\tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\listoftables
+%\listoffigures
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage{\pagestyle{empty}\cleardoublepage}
+
+%\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage{\pagestyle{empty}\cleardoublepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Numeracion a partir del capitulo I
@@ -180,46 +226,71 @@ Palabra reservada1, Palabra reservada2, ...
 \setlength{\parindent}{5mm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Motivación y objetivos}
+\chapter{Heuristic Algorithm}
 \label{chapter:obj}
 
 \input{tex/cap1.tex}
+%""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+\begin{center}
+\includegraphics[width=1\textwidth]{images/picn5.eps}\\[0.25cm]
+\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Fundamentos teóricos}
+\chapter{Designing and alalizing }
 \label{chapter:teo}
 
 \input{tex/cap2.tex}
+%""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+\begin{center}
+\includegraphics[width=1\textwidth]{images/picn7.eps}\\[0.25cm]
+\end{center}
+%""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Procedimiento experimental}
+\chapter{Technics of parallelization}
 \label{chapter:exp}
 
 \input{tex/cap3.tex}
-
+%""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+\begin{center}
+\includegraphics[width=1\textwidth]{images/picn11.eps}\\[0.25cm]
+\end{center}
+%""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+%""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+\begin{center}
+\includegraphics[width=1\textwidth]{images/picn12.eps}\\[0.25cm]
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\includegraphics[width=1\textwidth]{images/picn14.eps}\\[0.25cm]
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\includegraphics[width=1\textwidth]{images/picn15.eps}\\[0.25cm]
+\end{center}
+%""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Conclusiones}
 \label{chapter:conclusiones}
 
 \input{tex/cap4.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \thispagestyle{empty}
-\begin{appendix}
+%\begin{appendix}
 
-\chapter{Título del Apéndice 1}
-\label{appendix:1}
+%\chapter{Título del Apéndice 1}
+%\label{appendix:1}
 
-\input{tex/apendice1.tex}
+%\input{tex/apendice1.tex}
 
-\chapter{Título del Apéndice 2}
-\label{appendix:2}
+%\chapter{Título del Apéndice 2}
+%\label{appendix:2}
 
-\input{tex/apendice2.tex}
+%\input{tex/apendice2.tex}
 
-\end{appendix}
+%\end{appendix}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addcontentsline{toc}{chapter}{Bibliografía}
@@ -227,6 +298,7 @@ Palabra reservada1, Palabra reservada2, ...
 
 
 \bibliography{bib/references}
+
 \nocite{*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

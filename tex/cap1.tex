@@ -1,24 +1,59 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Chapter 1: Motivación y Objetivos 
+% Chapter 1:  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Los objetivos le dan al lector las razones por las que se realizó el
-proyecto o trabajo de investigación.
+By means of the basic heuristic a given container is loaded in several iterations.
+Within an iteration a so-called packing space is filled with one or more boxes.
+A packing space is an empty rectangular space within the container with defined side
+dimensions. In the first iteration the complete interior of the container is used as the
+packing space. For the loading of a packing space only box arrangements with a predefined
+simple structure are considered. These are called local arrangements. The
+feasible local arrangements for a packing space are generated and evaluated by
+means of certain criteria. The unused part of the packing space is completely subdivided
+into several residual packing spaces. These are filled later. A rough description
+of the algorithm of the basic heuristic is given in Fig. 1.
+The overall algorithm presented in Fig. 1 requires some comments.
+
+• In order to enhance the chances of loading small packing spaces, the packing
+space with the smallest volume is always processed first.
+
+• The container is embedded in a three-dimensional coordinates system. The bottom
+left-hand rear corner of a packing space is used as the reference corner.
+The coordinates of the reference corner are stored together with the dimensions
+of the packing space. The position of a box results from the coordinates of the
+reference corner of the respective packing space and its placement within the respective
+local arrangement (see below).
+
+• In this section, the basic heuristic is presented as a greedy heuristic. In step (5) the
+best evaluated first local arrangement of ArrList is selected. In Section 3 the basic
+heuristic is extended in such a way that the best arrangement is not necessarily
+used for a packing space with packing space index ipr. Only with this extension
+can the basic heuristic be used for the generation of different solutions to a prob-
+lem instance. It should be mentioned that an index ipr is only assigned to fillable
+packing spaces in which at least one box can be placed.
+
+• At the same time as a local arrangement is generated and evaluated (step 2), the
+residual packing spaces that would occur if this local arrangement was used are
+generated. In step (6) these residual packing spaces are possibly inserted into
+the packing space list PrList.
+From the last comment it can be concluded that a more detailed description of the
+basic heuristic requires merely a refinement of step (3), which is subsequently described.
+
 
 %---------------------------------------------------------------------------------
-\section{Sección Uno}
-\label{1:sec:1}
-  Primer párrafo de la primera sección.
+%\section{Sección Uno}
+%\label{1:sec:1}
+%  Primer párrafo de la primera sección.
 
 
 %---------------------------------------------------------------------------------
-\section{Sección Dos}
-\label{1:sec:2}
-  Primer párrafo de la segunda sección.
+%\section{Sección Dos}
+%\label{1:sec:2}
+%  Primer párrafo de la segunda sección.
 
-\begin{itemize}
-  \item Item 1
-  \item Item 2
-  \item Item 3
-\end{itemize}
+%\begin{itemize}
+%  \item Item 1
+%  \item Item 2
+%  \item Item 3
+%\end{itemize}
 
